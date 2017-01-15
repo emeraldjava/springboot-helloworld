@@ -28,13 +28,12 @@ public class HomeControllerTest {
     public void helloWorld() {
         getRequest("/")
             .assertStatusCode(OK)
-            .assertResponseBody("Hello from GazGeek!");
+            .assertResponseBody("Hello from emeraldjava!");
     }
 
     private HelloWorldResponse getRequest(String uri) {
         return new HelloWorldResponse(restTemplate.getForEntity(getUri(uri), String.class));
     }
-
 
     protected URI getUri(String uri) {
         return UriComponentsBuilder
